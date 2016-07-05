@@ -9,6 +9,17 @@ RSpec.describe AddressBook do
   expect(entry.email).to eq expected_email
 end
 
+  context "#detone" do
+    it "deletes all entries" do
+      book.add_entry("John king", "510-555-4444", "John@gmail.com")
+      book.add_entry("John king", "510-555-4444", "John@gmail.com")
+      book.add_entry("John king", "510-555-4444", "John@gmail.com")
+
+      book.detonate
+      expect(book.entries.size)_to eq 0
+    end
+  end
+
 
   describe "attributes" do
     it "responds to entries" do
